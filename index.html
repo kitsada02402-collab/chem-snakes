@@ -506,7 +506,7 @@ const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const rnd=n=>Math.floor(Math.random()*n);
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const cleanName=(s,n)=>String(s==null?'':s).replace(/[\u0000-\u001f\u007f<>&"'\\\/]/g,'').trim().slice(0,n||16);
+const cleanName=(s,n)=>String(s==null?'':s).replace(/[\u0000-\u001f\u007f<>&"'\\]/g,'').trim().slice(0,n||16);
 const A_=Engine.arr;
 let toastH=null;
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.remove('hidden');clearTimeout(toastH);toastH=setTimeout(()=>t.classList.add('hidden'),3000);}
